@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Slutproject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <local:Gameboard/>
+        Title="MainWindow" Height="450" Width="800"
+        Background="Aqua">
+
+    <Grid Background="#252323">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Background="LightBlue" Height="50" Width="150" Click="">EXIT</Button>
+        <Button Background="LightBlue" Height="50" Width="150" Click="">RESET</Button>
+        <Button Background="LightBlue" Height="50" Width="300" Click="">MODE</Button>
+        <Button Background="LightBlue" Height="50" Width="300" Click="">NEW GAME</Button>
+        <TextBlock Background="LightBlue" Height="50" Width="150" >PLAYER X:</TextBlock>
+        <TextBlock Background="LightBlue" Height="50" Width="150" >PLAYER O:</TextBlock>
+        <TextBlock Background="LightBlue" Height="50" Width="150" ></TextBlock>
+        <TextBlock Background="LightBlue" Height="50" Width="150" ></TextBlock>
+        <local:Gameboard Margin="30,29.5,395,29.5"/>
     </Grid>
 </Window>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bratl\\source\\repos\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {}
+    "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bratl\\source\\repos\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {
+    "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bratl\\source\\repos\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
+        "projectUniqueName": "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
         "projectName": "Slutproject",
-        "projectPath": "C:\\Users\\bratl\\source\\repos\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
+        "projectPath": "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
         "packagesPath": "C:\\Users\\bratl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bratl\\source\\repos\\Prog2Slutproj\\Slutproject\\obj\\",
+        "outputPath": "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bratl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
