@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {}
+    "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {
+    "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
+        "projectUniqueName": "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
         "projectName": "Slutproject",
-        "projectPath": "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
-        "packagesPath": "C:\\Users\\bratl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bratl\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\obj\\",
+        "projectPath": "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
+        "packagesPath": "C:\\Users\\petter.bratland\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bratl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\petter.bratland\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

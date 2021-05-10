@@ -5,37 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Slutproject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="370" Width="690"
         Background="Aqua">
 
     <Grid Background="#252323">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Button Background="LightBlue" Height="50" Width="150" Click="">EXIT</Button>
-        <Button Background="LightBlue" Height="50" Width="150" Click="">RESET</Button>
-        <Button Background="LightBlue" Height="50" Width="300" Click="">MODE</Button>
-        <Button Background="LightBlue" Height="50" Width="300" Click="">NEW GAME</Button>
-        <TextBlock Background="LightBlue" Height="50" Width="150" >PLAYER X:</TextBlock>
-        <TextBlock Background="LightBlue" Height="50" Width="150" >PLAYER O:</TextBlock>
-        <TextBlock Background="LightBlue" Height="50" Width="150" ></TextBlock>
-        <TextBlock Background="LightBlue" Height="50" Width="150" ></TextBlock>
-        <local:Gameboard Margin="30,29.5,395,29.5"/>
+        <Button Background="LightBlue" Height="50" Width="150" Click="" Grid.Row="5" Grid.Column="4">EXIT</Button>
+        <Button Background="LightBlue" Height="50" Width="150" Click="" Grid.Row="5" Grid.Column="3">RESET</Button>
+        <Button Background="LightBlue" Height="50" Width="150" Click="" Grid.Row="4" Grid.Column="3">MODE</Button>
+        <Button Background="LightBlue" Height="50" Width="150" Click="" Grid.Row="4" Grid.Column="4">NEW GAME</Button>
+        <TextBlock Background="LightBlue" Height="50" Width="150" Grid.Row="1" Grid.Column="3">PLAYER X:</TextBlock>
+        <TextBlock Background="LightBlue" Height="50" Width="150" Grid.Row="2" Grid.Column="3">PLAYER O:</TextBlock>
+        <TextBlock Background="LightBlue" Height="50" Width="150" Grid.Row="2" Grid.Column="4"></TextBlock>
+        <TextBlock Background="LightBlue" Height="50" Width="150" Grid.Row="1" Grid.Column="4"></TextBlock>
+        <local:Gameboard Background="AntiqueWhite" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1"/>
     </Grid>
 </Window>
