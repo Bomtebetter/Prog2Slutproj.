@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Slutproject",
+    "\\Slutproject\\bin\\Debug",
+    "\\Slutproject\\bin\\Release"
   ],
+  "SelectedNode": "\\Slutproject\\Slutproject.sln",
   "PreviewInSolutionExplorer": false
 }

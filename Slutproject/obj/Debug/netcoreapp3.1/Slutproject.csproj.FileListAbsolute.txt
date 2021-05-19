@@ -26,7 +26,6 @@ C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\bin\Debug\netc
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\bin\Debug\netcoreapp3.1\Slutproject.runtimeconfig.dev.json
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\bin\Debug\netcoreapp3.1\Slutproject.dll
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\bin\Debug\netcoreapp3.1\Slutproject.pdb
-C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\Slutproject.csprojAssemblyReference.cache
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\Gameboard.g.cs
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\App.g.cs
