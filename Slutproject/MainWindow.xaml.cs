@@ -24,5 +24,10 @@ namespace Slutproject
         {
             InitializeComponent();
         }
+
+        public void ButtonClicked(Object sender, RoutedEventArgs e)
+        { 
+        
+        }
     }
 }

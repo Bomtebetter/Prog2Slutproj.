@@ -41,3 +41,4 @@ C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netc
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\Slutproject.dll
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\Slutproject.pdb
 C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\Slutproject.genruntimeconfig.cache
+C:\Users\bratl\Source\Repos\Bomtebetter\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\Slutproject.csprojAssemblyReference.cache

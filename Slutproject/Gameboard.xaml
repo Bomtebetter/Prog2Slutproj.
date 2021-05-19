@@ -7,8 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              Background="#F5F1ED">
-    <Grid>
-        <Grid.RowDefinitions></Grid.RowDefinitions>
-        <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
-    </Grid>
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="UserDataTemplate">
+            <StackPanel >
+                <Label HorizontalAlignment="Center" Content="test" />
+                    
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+
+
+    <ItemsControl x:Name="UserList" ItemTemplate="{StaticResource UserDataTemplate}" ItemsSource="{Binding Source=Board}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <VirtualizingStackPanel Orientation="Vertical"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+
+
 </UserControl>
