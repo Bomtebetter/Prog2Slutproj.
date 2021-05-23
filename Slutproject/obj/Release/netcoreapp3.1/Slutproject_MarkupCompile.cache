@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\ander\source\repos\Prog2Slutproj\Slutproject\obj\Debug\netcoreapp3.1\
+C:\Users\ander\source\repos\Prog2Slutproj\Slutproject\obj\Release\netcoreapp3.1\
 Slutproject
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
 C:\Users\ander\source\repos\Prog2Slutproj\Slutproject\App.xaml
 2-468860530
 

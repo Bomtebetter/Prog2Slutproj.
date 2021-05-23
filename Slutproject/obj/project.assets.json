@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\petter.bratland\\.nuget\\packages\\": {}
+    "C:\\Users\\ander\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
+      "projectUniqueName": "C:\\Users\\ander\\Source\\Repos\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
       "projectName": "Slutproject",
-      "projectPath": "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
-      "packagesPath": "C:\\Users\\petter.bratland\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\petter.bratland\\Source\\Repos\\Bomtebetter\\Prog2Slutproj\\Slutproject\\obj\\",
+      "projectPath": "C:\\Users\\ander\\Source\\Repos\\Prog2Slutproj\\Slutproject\\Slutproject.csproj",
+      "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ander\\Source\\Repos\\Prog2Slutproj\\Slutproject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\petter.bratland\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,7 +36,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -44,7 +47,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -63,7 +65,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

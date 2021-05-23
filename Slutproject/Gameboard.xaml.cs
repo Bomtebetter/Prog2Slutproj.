@@ -25,8 +25,34 @@ namespace Slutproject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            var clickedPosition = ((Button)sender).Name.Substring(1);
+
+            TogglePosition(clickedPosition);
+
+            var winVector = GetWinVector(clickedPosition);
+
+            if (winVector != null)
+            {
+                SetWinningRow(winVector);
+            }
+
         }
+
+        private void SetWinningRow(object winVector)
+        {
+            throw new NotImplementedException();
+        }
+
+        private object GetWinVector(object clickedPosition)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TogglePosition(object clickedPosition)
+        {
+            throw new NotImplementedException();
+        }
+
         private void CheckThreeInRow()
         {
 
