@@ -6,6 +6,9 @@ namespace Slutproject
 {
     public class GameEngine
     {
+        public GameEngine(int dimension)
+        {
 
+        }
     }
 }
