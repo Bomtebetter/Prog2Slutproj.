@@ -24,5 +24,10 @@ namespace Slutproject
         {
             InitializeComponent();
         }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
