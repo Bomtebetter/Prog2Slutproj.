@@ -18,44 +18,55 @@ namespace Slutproject
     /// </summary>
     public partial class Gameboard : UserControl
     {
+        private int boardSize = 3;
+        private GameEngine ge;
+        private char currentPlayer = 'X';
+
         public Gameboard()
         {
             InitializeComponent();
+            ge = new GameEngine(boardSize);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var clickedPosition = ((Button)sender).Name.Substring(1);
+            var button = ((Button)sender);
+            var clickedPosition = button.Name.Substring(1);
 
-            TogglePosition(clickedPosition);
+            ge.SetPosition(int.Parse(clickedPosition.Substring(0,1)), int.Parse(clickedPosition.Substring(1,1)), currentPlayer);
 
-            var winVector = GetWinVector(clickedPosition);
+            var winVector = ge.GetWinVector(clickedPosition);
 
             if (winVector != null)
             {
                 SetWinningRow(winVector);
             }
 
+            UpdateBoard();
+
         }
 
-        private void SetWinningRow(object winVector)
+        private void UpdateBoard()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    ((Button)this.FindName("b" + i + j)).Content = ge.Board[i,j];
+                }
+            }
+
         }
 
-        private object GetWinVector(object clickedPosition)
+        private void SetWinningRow((int x, int y)[] winVector)
         {
-            throw new NotImplementedException();
+            foreach (var item in winVector)
+            {
+                ((Button)this.FindName("b" + item.x + item.y)).Background = Brushes.Green;
+
+            }
         }
 
-        private void TogglePosition(object clickedPosition)
-        {
-            throw new NotImplementedException();
-        }
 
-        private void CheckThreeInRow()
-        {
-
-        }
     }
 }
