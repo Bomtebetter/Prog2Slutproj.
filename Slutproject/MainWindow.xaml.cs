@@ -18,8 +18,12 @@ namespace Slutproject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    
     public partial class MainWindow : Window
     {
+        private int scoreX = 0;
+        private int scoreO = 0;
         public MainWindow()
         {
             InitializeComponent();
