@@ -18,8 +18,12 @@ namespace Slutproject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    
     public partial class MainWindow : Window
     {
+        private int scoreX = 0;
+        private int scoreO = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +31,12 @@ namespace Slutproject
 
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
-            
+            Environment.Exit(0);
+        }
+
+        private void Button_NewGame(object sender, RoutedEventArgs e)
+        {
+            Gameboard.Game.NewGame();
         }
     }
 }

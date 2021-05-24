@@ -9,9 +9,8 @@ namespace Slutproject
         private readonly char[,] board;
         private readonly int dimension;
 
-        public GameEngine(int dimension)
+        public void NewGame()
         {
-            board = new char[dimension, dimension];
             for (int i = 0; i < dimension; i++)
             {
                 for (int j = 0; j < dimension; j++)
@@ -19,6 +18,12 @@ namespace Slutproject
                     board[i, j] = '-';
                 }
             }
+        }
+
+        public GameEngine(int dimension)
+        {
+            board = new char[dimension, dimension];
+            NewGame();
 
             this.dimension = dimension;
         }
@@ -27,39 +32,44 @@ namespace Slutproject
 
         public (int x, int y)[] GetWinVector(object clickedPosition)
         {
-            return FindHorizontalWinVector();
+            var vector = FindHorizontalWinVector();
+            if (vector != null) return vector;
+
+            vector = FindVerticalWinVector();
+            if (vector != null) return vector;
+
             return FindDiagonalWinVector();
-            return FindVerticalWinVector();
-            return null;
         }
 
         private (int x, int y)[] FindDiagonalWinVector()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         private (int x, int y)[] FindHorizontalWinVector()
         {
 
-            return FindHorizontalWinVector('X');
+            var vector = FindHorizontalWinVector('X');
+            if (vector != null) return vector;
+
             return FindHorizontalWinVector('O');
 
         }
 
         private (int x, int y)[] FindHorizontalWinVector(char v)
         {
-            int counter = 0;
             (int x, int y)[] result = new (int, int)[3] ;
 
             //check each row
-            for (int i = 0; i < dimension; i++)
+            for (int row = 0; row < dimension; row++)
             {
-                //search for three in line in a row
-                for (int j = 0; i < dimension; i++)
+                int counter = 0;
+                //search for three in line in a col
+                for (int col = 0; col < dimension; col++)
                 {
-                    if (board[j,i] == v)
+                    if (board[col,row] == v)
                     {
-                        result[counter] = (j,i);
+                        result[counter] = (col,row);
                         counter++;
                         if (counter == 3) return result;
                     } else
@@ -73,7 +83,36 @@ namespace Slutproject
 
         private (int x, int y)[] FindVerticalWinVector()
         {
-            throw new NotImplementedException();
+            var vector = FindVerticalWinVector('X');
+            if (vector != null) return vector;
+
+            return FindVerticalWinVector('O');
+        }
+
+        private (int x, int y)[] FindVerticalWinVector(char v)
+        {
+            (int x, int y)[] result = new (int, int)[3];
+
+            //check each col
+            for (int col = 0; col < dimension; col++)
+            {
+                int counter = 0;
+                //search for three in line in a row
+                for (int row = 0; row < dimension; row++)
+                {
+                    if (board[col, row] == v)
+                    {
+                        result[counter] = (col, row);
+                        counter++;
+                        if (counter == 3) return result;
+                    }
+                    else
+                    {
+                        counter = 0;
+                    }
+                }
+            }
+            return null;
         }
 
         public void SetPosition(int x, int y, char marker)

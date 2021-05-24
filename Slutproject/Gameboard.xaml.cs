@@ -19,13 +19,17 @@ namespace Slutproject
     public partial class Gameboard : UserControl
     {
         private int boardSize = 3;
-        private GameEngine ge;
+        private static  GameEngine ge;
         private char currentPlayer = 'X';
+
+        public static GameEngine Game { get => ge; set => ge = value; }
 
         public Gameboard()
         {
             InitializeComponent();
-            ge = new GameEngine(boardSize);
+            Game = new GameEngine(boardSize);
+            UpdateBoard();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -33,9 +37,9 @@ namespace Slutproject
             var button = ((Button)sender);
             var clickedPosition = button.Name.Substring(1);
 
-            ge.SetPosition(int.Parse(clickedPosition.Substring(0,1)), int.Parse(clickedPosition.Substring(1,1)), currentPlayer);
+            Game.SetPosition(int.Parse(clickedPosition.Substring(0,1)), int.Parse(clickedPosition.Substring(1,1)), currentPlayer);
 
-            var winVector = ge.GetWinVector(clickedPosition);
+            var winVector = Game.GetWinVector(clickedPosition);
 
             if (winVector != null)
             {
@@ -43,6 +47,7 @@ namespace Slutproject
             }
 
             UpdateBoard();
+            PlayerChange();
 
         }
 
@@ -52,7 +57,7 @@ namespace Slutproject
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    ((Button)this.FindName("b" + i + j)).Content = ge.Board[i,j];
+                    ((Button)this.FindName("b" + i + j)).Content = Game.Board[i,j];
                 }
             }
 
@@ -67,6 +72,16 @@ namespace Slutproject
             }
         }
 
-
+        private void PlayerChange()
+        {
+            if (currentPlayer.Equals('X'))
+            {
+                currentPlayer = 'O';
+            }
+            else if (currentPlayer.Equals('O'))
+            {
+                currentPlayer = 'X';
+            }
+        }
     }
 }
