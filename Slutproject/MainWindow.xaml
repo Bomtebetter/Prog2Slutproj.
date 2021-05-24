@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Slutproject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="370" Width="690"
+        Title="MainWindow" Height="400" Width="690"
         Background="Aqua">
 
     <Grid Background="#252323">
@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         <Button Click="Button_Exit" Background="LightBlue" Height="50" Width="150" Grid.Row="5" Grid.Column="4">EXIT</Button>
         <Button Background="LightBlue" Height="50" Width="150" Grid.Row="5" Grid.Column="3">RESET SCORE</Button>
-        <Button Background="LightBlue" Height="50" Width="150" Grid.Row="4" Grid.Column="3">MODE</Button>
+        <Button ToolTip="Click to change inbetween mapsizes (small, medium, large)" Background="LightBlue" Height="50" Width="150" Grid.Row="4" Grid.Column="3">MODE</Button>
         <Button Click="Button_NewGame"    Background="LightBlue" Height="50" Width="150" Grid.Row="4" Grid.Column="4">NEW GAME</Button>
         <TextBlock Background="LightBlue" Height="50" Width="150" Grid.Row="1" Grid.Column="3">PLAYER X:</TextBlock>
         <TextBlock Background="LightBlue" Height="50" Width="150" Grid.Row="2" Grid.Column="3">PLAYER O:</TextBlock>
