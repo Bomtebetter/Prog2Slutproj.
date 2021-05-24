@@ -20,7 +20,7 @@
 		</Grid.ColumnDefinitions>
         <Button Name="b00" Click="Button_Click" Grid.Column="0" Grid.Row="0"></Button>
         <Button Name="b01" Click="Button_Click" Grid.Column="1" Grid.Row="0"></Button>
-        <Button Name="b03" Click="Button_Click" Grid.Column="2" Grid.Row="0"></Button>
+        <Button Name="b02" Click="Button_Click" Grid.Column="2" Grid.Row="0"></Button>
         <Button Name="b10" Click="Button_Click" Grid.Column="0" Grid.Row="1"></Button>
         <Button Name="b11" Click="Button_Click" Grid.Column="1" Grid.Row="1"></Button>
         <Button Name="b12" Click="Button_Click" Grid.Column="2" Grid.Row="1"></Button>
