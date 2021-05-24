@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Slutproject"
              mc:Ignorable="d" 
+             x:Name="gameboard"
              d:DesignHeight="300" d:DesignWidth="300"
              Background="#F5F1ED">
     <Grid>
@@ -19,13 +20,13 @@
 			<ColumnDefinition></ColumnDefinition>
 		</Grid.ColumnDefinitions>
         <Button Name="b00" Click="Button_Click" Grid.Column="0" Grid.Row="0"></Button>
-        <Button Name="b01" Click="Button_Click" Grid.Column="1" Grid.Row="0"></Button>
-        <Button Name="b02" Click="Button_Click" Grid.Column="2" Grid.Row="0"></Button>
-        <Button Name="b10" Click="Button_Click" Grid.Column="0" Grid.Row="1"></Button>
+        <Button Name="b10" Click="Button_Click" Grid.Column="1" Grid.Row="0"></Button>
+        <Button Name="b20" Click="Button_Click" Grid.Column="2" Grid.Row="0"></Button>
+        <Button Name="b01" Click="Button_Click" Grid.Column="0" Grid.Row="1"></Button>
         <Button Name="b11" Click="Button_Click" Grid.Column="1" Grid.Row="1"></Button>
-        <Button Name="b12" Click="Button_Click" Grid.Column="2" Grid.Row="1"></Button>
-        <Button Name="b20" Click="Button_Click" Grid.Column="0" Grid.Row="2"></Button>
-        <Button Name="b21" Click="Button_Click" Grid.Column="1" Grid.Row="2"></Button>
+        <Button Name="b21" Click="Button_Click" Grid.Column="2" Grid.Row="1"></Button>
+        <Button Name="b02" Click="Button_Click" Grid.Column="0" Grid.Row="2"></Button>
+        <Button Name="b12" Click="Button_Click" Grid.Column="1" Grid.Row="2"></Button>
         <Button Name="b22" Click="Button_Click" Grid.Column="2" Grid.Row="2"></Button>
     </Grid>
 </UserControl>

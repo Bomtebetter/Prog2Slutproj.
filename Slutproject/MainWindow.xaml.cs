@@ -27,7 +27,12 @@ namespace Slutproject
 
         private void Button_Exit(object sender, RoutedEventArgs e)
         {
-            
+            Environment.Exit(0);
+        }
+
+        private void Button_NewGame(object sender, RoutedEventArgs e)
+        {
+            Gameboard.Game.NewGame();
         }
     }
 }

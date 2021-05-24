@@ -125,7 +125,7 @@ namespace Slutproject {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Slutproject_gsc0cfmx_wpftmp;component/gameboard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Slutproject_ucinvnwd_wpftmp;component/gameboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Gameboard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
