@@ -8,9 +8,14 @@ namespace Slutproject
     {
         private readonly char[,] board;
         private readonly int dimension;
+        private bool gameEnabled = true;
+        public bool GameEnabled { get => gameEnabled; set => gameEnabled = value; }
+
+        public event EventHandler<WinEventArgs> Winner;
 
         public void NewGame()
         {
+            GameEnabled = true;
             for (int i = 0; i < dimension; i++)
             {
                 for (int j = 0; j < dimension; j++)
@@ -19,6 +24,10 @@ namespace Slutproject
                 }
             }
         }
+        /// <summary>
+        /// Placerar ut '-' i alla knappar så de visar vilka som är spelbara
+        /// </summary>
+        /// <param name="dimension"></param>
 
         public GameEngine(int dimension)
         {
@@ -27,6 +36,9 @@ namespace Slutproject
 
             this.dimension = dimension;
         }
+        /// <summary>
+        /// En konstruktor
+        /// </summary>
 
         public char[,] Board => board;
 
@@ -38,14 +50,74 @@ namespace Slutproject
             vector = FindVerticalWinVector();
             if (vector != null) return vector;
 
-            return FindDiagonalWinVector();
-        }
+            vector = FindDiagonalWinVectorUp();
+            if (vector != null) return vector;
 
-        private (int x, int y)[] FindDiagonalWinVector()
+            return FindDiagonalWinVectorDown();
+        }
+        /// <summary>
+        /// Kollar igenom alla metoder för att vinna för att kolla ifall man vunnit
+        /// </summary>
+        /// <returns></returns>
+
+        private (int x, int y)[] FindDiagonalWinVectorUp()
         {
+            var vector = FindDiagonalWinVectorUp('X');
+            if (vector != null) return vector;
+
+            return FindDiagonalWinVectorUp('O');
+        }
+        /// <summary>
+        /// gör så att metoden för att kolla ifall man vunnit appliceras på båda spelarna
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+
+        private (int x, int y)[] FindDiagonalWinVectorUp(char v)
+        {
+            (int x, int y)[] result = new (int, int)[3];
+            if (board[2, 0] == v && board[1, 1] == v && board[0, 2] == v)
+            {
+                result = new[] { (2, 0), (1, 1), (0, 2) };
+                Winner(this, new WinEventArgs() { Winner = v });
+                return result;
+            }
             return null;
         }
+        /// <summary>
+        /// Kollar igenom de diagonala punkterna från vänstra nedre hörn för att se ifall man fått 3 irad på diagonalen
+        /// </summary>
+        /// <returns></returns>
 
+        private (int x, int y)[] FindDiagonalWinVectorDown()
+        {
+            var vector = FindDiagonalWinVectorDown('X');
+            if (vector != null) return vector;
+
+            return FindDiagonalWinVectorDown('O');
+        }
+        /// <summary>
+        /// gör så att metoden för att kolla ifall man vunnit appliceras på båda spelarna
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+       
+        private (int x, int y)[] FindDiagonalWinVectorDown(char v)
+        {
+            (int x, int y)[] result = new (int, int)[3];
+            if (board[0,0] == v && board[1, 1] == v && board[2, 2] == v)
+            {
+                result = new[] { (0, 0),(1,1),(2,2)};
+                Winner(this, new WinEventArgs() { Winner = v });
+                return result;
+            }
+            return null;
+        }
+        /// <summary>
+        /// Kollar igenom de diagonala punkterna från vänstra övre hörn för att se ifall man fått 3 irad på diagonalen
+        /// </summary>
+        /// <returns></returns>
+       
         private (int x, int y)[] FindHorizontalWinVector()
         {
 
@@ -55,7 +127,12 @@ namespace Slutproject
             return FindHorizontalWinVector('O');
 
         }
-
+        /// <summary>
+        /// gör så att metoden för att kolla ifall man vunnit appliceras på båda spelarna
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        
         private (int x, int y)[] FindHorizontalWinVector(char v)
         {
             (int x, int y)[] result = new (int, int)[3] ;
@@ -71,7 +148,11 @@ namespace Slutproject
                     {
                         result[counter] = (col,row);
                         counter++;
-                        if (counter == 3) return result;
+                        if (counter == 3)
+                        {
+                            Winner(this, new WinEventArgs() { Winner = v });
+                            return result;
+                        }
                     } else
                     {
                         counter = 0;
@@ -80,7 +161,11 @@ namespace Slutproject
             }
             return null;
         }
-
+        /// <summary>
+        /// en for loop som kollar igenom varje kolumn för att se ifall det finns 3 irad i någon av dem
+        /// </summary>
+        /// <returns></returns>
+        
         private (int x, int y)[] FindVerticalWinVector()
         {
             var vector = FindVerticalWinVector('X');
@@ -88,7 +173,12 @@ namespace Slutproject
 
             return FindVerticalWinVector('O');
         }
-
+        /// <summary>
+        /// gör så att metoden för att kolla ifall man vunnit appliceras på båda spelarna
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        
         private (int x, int y)[] FindVerticalWinVector(char v)
         {
             (int x, int y)[] result = new (int, int)[3];
@@ -104,7 +194,11 @@ namespace Slutproject
                     {
                         result[counter] = (col, row);
                         counter++;
-                        if (counter == 3) return result;
+                        if (counter == 3)
+                        {
+                            Winner(this, new WinEventArgs() { Winner = v });
+                            return result;
+                        }
                     }
                     else
                     {
@@ -114,10 +208,17 @@ namespace Slutproject
             }
             return null;
         }
-
-        public void SetPosition(int x, int y, char marker)
+        /// <summary>
+        /// en for loop som kollar igenom varje rad för att se ifall det finns 3 irad i någon av dem
+        /// </summary>
+        /// <returns></returns>
+        
+        public void SetPosition(int x, int y, char player)
         {
-            board[x, y] = marker;
+            board[x, y] = player;
         }
+        /// <summary>
+        /// bestämmer vart i boarden spelare har lagt en pjäs
+        /// </summary>
     }
 }
