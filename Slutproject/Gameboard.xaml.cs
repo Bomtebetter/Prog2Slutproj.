@@ -22,6 +22,9 @@ namespace Slutproject
 
         public GameEngine Game { get; }
 
+        /// <summary>
+        /// Initierar att Spelare X börjar och sedan startar spelet och kör ett refresh på spelbrädet
+        /// </summary>
         public Gameboard()
         {
             CurrentPlayer = 'X';
@@ -30,22 +33,28 @@ namespace Slutproject
             Game.NewGame();
             UpdateBoard();
         }
-        /// <summary>
-        /// Initierar att Spelare X börjar och sedan startar spelet och kör ett refresh på spelbrädet
-        /// </summary>
+        
 
         public static readonly DependencyProperty CurrentPlayerProperty = DependencyProperty.Register("CurrentPlayer", typeof(char), typeof(Gameboard));
-        public char CurrentPlayer
-        {
-            get { return (char)GetValue(CurrentPlayerProperty); }
-            set { SetValue(CurrentPlayerProperty, value); }
-        }
+
         /// <summary>
         /// För att texten i gui ska binda så är det en dependencyprop.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+        public char CurrentPlayer
+        {
+            get { return (char)GetValue(CurrentPlayerProperty); }
+            set { SetValue(CurrentPlayerProperty, value); }
+        }
+
+        /// <summary>
+        /// börjar med att kolla ifall GameEnabled är true/false ifall sann låter en spela
+        /// kollar om knappens innehåll är '-' isåfall registrerar den det som ett "spelmove"
+        /// ifall '-' byt ut knappens innehåll till X/O beroende på vems tur
+        /// jämför sedan ens klickade position för att se ifall man har lagt tre irad ifall ja = vinn 
+        /// ifall nej = byt spelare och förtsätt att spela
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!Game.GameEnabled) return;
@@ -68,14 +77,11 @@ namespace Slutproject
             }
             PlayerChange();
         }
+
         /// <summary>
-        /// börjar med att kolla ifall GameEnabled är true/false ifall sann låter en spela
-        /// kollar om knappens innehåll är '-' isåfall registrerar den det som ett "spelmove"
-        /// ifall '-' byt ut knappens innehåll till X/O beroende på vems tur
-        /// jämför sedan ens klickade position för att se ifall man har lagt tre irad ifall ja = vinn 
-        /// ifall nej = byt spelare och förtsätt att spela
+        /// Lägger en refresh på gameboardets innehål för användarvyn
         /// </summary>
-        
+        /// <param name="winVector"></param>
         public void UpdateBoard()
         {
             for (int i = 0; i < boardSize; i++)
@@ -87,11 +93,10 @@ namespace Slutproject
                 }
             }
         }
+
         /// <summary>
-        /// Lägger en refresh på gameboardets innehål för användarvyn
+        /// Målar bakgrunden grön på de knappar som gör 3 i rad
         /// </summary>
-        /// <param name="winVector"></param>
-        
         private void SetWinningRow((int x, int y)[] winVector)
         {
             foreach (var item in winVector)
@@ -99,10 +104,10 @@ namespace Slutproject
                 ((Button)this.FindName("b" + item.x + item.y)).Background = Brushes.Green;
             }
         }
+
         /// <summary>
-        /// Målar bakgrunden grön på de knappar som gör 3 i rad
+        /// Gör så att man den växelvis byter spelare
         /// </summary>
-        
         private void PlayerChange()
         {
             if (CurrentPlayer.Equals('X'))
@@ -114,8 +119,6 @@ namespace Slutproject
                 CurrentPlayer = 'X';
             }
         }
-        /// <summary>
-        /// Gör så att man den växelvis byter spelare
-        /// </summary>
+        
     }
 }
